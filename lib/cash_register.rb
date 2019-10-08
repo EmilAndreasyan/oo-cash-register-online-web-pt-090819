@@ -32,16 +32,7 @@ class CashRegister
   end
 
   def void_last_transaction
-    if @items.clear
-    @total = 0
-    end
+    @total -= @price
   end
 
 end
-cash_register = CashRegister.new(0, 100)
-cash_register.total
-cash_register.add_item("eggs", 30)
-cash_register.add_item("book", 15, 3)
-cash_register.apply_discount
-cash_register.add_item("macbook air", 1000)
-cash_register.void_last_transaction
